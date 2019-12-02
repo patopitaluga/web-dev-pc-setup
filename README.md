@@ -25,28 +25,37 @@ Check the keyboard language setting. Click on the search icon in the task bar, t
 ### 2. Display settings
 Windows key + s, type display, click **display settings**. Check that the **Scale and layout** settings is set top 100%. Restart the pc. Check that the **Resolution** is set to your preference and recommendation for your display (1920x1080 in my case), google which one is the best for your system but also try a couple of resolutions, the bigger might not be the best for you. Consider that the aspect ration must be right. If images seems taller or wider than expected then that resolution is not the right one.
 
-### 3. Taskbar settings
-Open mouse menu over the taskbar, disable "Show people on the taskbar" and "Show task view button". Click on **Taskbar settings**, choose **Use small taskbar buttons** Off, choose Combine taskbar buttons: Never. In **Notification area** settings, set all to be displayed for start, and then chose carefully which ones are not useful to you.
+### 3. Disable all sounds
+Open control panel. Set **View by** to **Large icons**. Go to the **Sound** option. **Sounds** tab. Set **Sound Scheme** to **No sounds**.
 
-### 4. Disable all sounds
-
-### 5. Initial browser settings.
+### 4. Initial browser settings.
 If Edge is installed open it first. If no prompt is displayed, close it and open it again. Will ask you to set personalized news. Go to **Settings**, Set **Open Microsoft Edge with**, **New tab page**; **Open new tabs with**, **A blank page**; **Set your home page**: **New tab page**.
 If Firefox is installed open it once and it will update itself. Go to **Options** and make sure that Homepage and new tabs are set as **Blank page** in the **Home** tab. Open this document from Firefox.
 
-### 6. Remove bloat ware
+### 5. Remove bloat ware
 Check the **Notification area** in the taskbar (the part next to the clock, on the right corner). If you see anything suspicious or unnecesary, try to uninstall it. Windows key + s type programs, click on **Add or remove programs** check the list and remove all bloat ware. Be careful no to remove required display or sound card required software. Search for everything: "bing" related, 3d builder, appconnector, "booking" related, "soltaire" (or solitario), Corazones, OneNote, One Connect, People, Xbox, Zune.
 
 Disable or uninstall OneDrive if you don't use it.
 
-### 7. Performance settings
+### 6. Performance settings
+Open control panel. Click on **System**. On the sidebar choose **Advanced system settings**. Select the **Advanced** tab. Click **Settings** on **Performance**. On the **Visual Effects** tab, select **Adjust for best performance**, this will disable all effects, the select **Custom** and enable **Show shadows under mouse pointer** (useful to visually find the pointer), **Show window contents when dragging** (useful when testing responsive design) and **Smooth edge of screen fonts**.
 
-### 8. Install Chocolatey
+Enter Theme options and select the most clean and simple theme.
+
+### 7. Show file extensions
+Open a folder with the explorer. Select the **View** tab. Click **Options**, **Change folder and search options**. **View** tab. Uncheck **Hide extensions for known file types**. Select display hidden files and folders but keep "system files" hidden.
+
+### 8. Disable "AutoPlay" features
+Open control panel, click **AutoPlay** choose **Take no action** for every case.
+
+### 9. Install Chocolatey
 Chocolatey is a terminal package manager for Windows.
 Open cmd in "administrative mode" from search bar. Paste:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
+
+### 10. Install some useful apps
 
 Close the command prompt and open it again as administrative. You can use choco from terminal now.
 
@@ -60,5 +69,36 @@ Install Git
 choco install git -y
 ```
 
+Install cmder
+```
+choco install cmder -y
+```
+Open Cmder folder. Is usually installed in c:\\tools\\Cmder open mouse menu over Cmder.exe and **Send to**, **Desktop (create shortcut)**. Rename desktop shortcut as Cmder only. Open it as administrator for the first time. Then open it again and pin it to taskbar.
 
+Install atom
+```
+choco install atom -y
+```
 
+Install node
+```
+choco install nodejs -y
+```
+
+### 11. Taskbar settings
+Open mouse menu over the taskbar, disable "Show people on the taskbar" and "Show task view button". Click on **Taskbar settings**, choose **Use small taskbar buttons** Off, choose Combine taskbar buttons: Never. In **Notification area** settings, set all to be displayed for start, and then chose carefully which ones are not useful to you.
+
+Open Chrome, pin it to task bar. Open Cmder, pin it to task bar. Open Atom, pin it to the taskbar. Open notepad, pin it to the taskbar.
+
+### 12. Start up programs
+
+### 13. Custom commands
+
+### 14. Create your projects folder
+
+### Set Cmder initial behavior
+Go to 'settings'.
+In the settings group 'Startup', click on 'Tasks'.
+Click the console you want to modify (e.g. cmd::Cmder, cmd::Cmder as Admin, bash::bash etc.).
+Click the button that says 'Startup dir...'.
+Select the directory you want the console to start up in by default.
