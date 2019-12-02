@@ -85,6 +85,16 @@ Install node
 choco install nodejs -y
 ```
 
+Install mysql
+```
+choco install mysql -y
+```
+
+Install php
+```
+choco install php -y
+```
+
 ### 11. Taskbar settings
 Open mouse menu over the taskbar, disable "Show people on the taskbar" and "Show task view button". Click on **Taskbar settings**, choose **Use small taskbar buttons** Off, choose Combine taskbar buttons: Never. In **Notification area** settings, set all to be displayed for start, and then chose carefully which ones are not useful to you.
 
