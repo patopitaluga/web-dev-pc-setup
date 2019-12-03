@@ -95,20 +95,47 @@ Install php
 choco install php -y
 ```
 
-### 11. Taskbar settings
+### 12. Install Windows build tools
+Required for some npm packages. Open powershell as administrator and run:
+```
+npm install --global --production windows-build-tools
+```
+
+
+### 13. Taskbar settings
 Open mouse menu over the taskbar, disable "Show people on the taskbar" and "Show task view button". Click on **Taskbar settings**, choose **Use small taskbar buttons** Off, choose Combine taskbar buttons: Never. In **Notification area** settings, set all to be displayed for start, and then chose carefully which ones are not useful to you.
 
 Open Chrome, pin it to task bar. Open Cmder, pin it to task bar. Open Atom, pin it to the taskbar. Open notepad, pin it to the taskbar.
 
-### 12. Start up programs
+### 14. Start up programs
+Put shortcuts for your everyday used programs in this folder to make Windows open them when the computer starts.
+```
+C:\Users\Username\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+```
 
-### 13. Custom commands
+### 15. Custom commands
+Create a folder called e.g. **customcommands** in Documents, then search for **Edit the system environment variables** and add the path:
+```
+C:\Users\Username\Documents\customcommands
+```
+To test it create a test.bat file in that folder with "echo 1" as content. Try to run the command **test** from any other path.
 
-### 14. Create your projects folder
+### 16. Create your projects folder
+Create your **projects** folder wherever you consider. Clone any github project to login.
 
-### Set Cmder initial behavior
+### 17. Set Cmder initial behavior
 Go to 'settings'.
 In the settings group 'Startup', click on 'Tasks'.
 Click the console you want to modify (e.g. cmd::Cmder, cmd::Cmder as Admin, bash::bash etc.).
 Click the button that says 'Startup dir...'.
 Select the directory you want the console to start up in by default.
+
+### 18. Remove useless options from "New" context menu
+Open the Registry Editor
+Move to HKEY_CLASSES_ROOT\\.<extension> e.g. HKEY_CLASSES_ROOT\\.obd
+Delete or rename the ShellNew key. It may not always be at the root of the key.
+Or use this app: https://cresstone.com/apps/shellNewSettings/
+
+### 19. Setup Chrome.
+Make Chrome always show the url with protocol and www subdomain.
+Install plugin https://chrome.google.com/webstore/detail/suspicious-site-reporter/jknemblkbdhdcpllfgbfekkdciegfboi
