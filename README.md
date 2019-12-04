@@ -122,6 +122,26 @@ C:\Users\Username\Documents\customcommands
 ```
 To test it create a test.bat file in that folder with "echo 1" as content. Try to run the command **test** from any other path.
 
+A useful one is **backupfolder.bat**
+```
+@echo off
+set CUR_YYYY=%date:~10,4%
+set CUR_MM=%date:~4,2%
+set CUR_DD=%date:~7,2%
+set CUR_HH=%time:~0,2%
+if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
+
+set CUR_NN=%time:~3,2%
+set CUR_SS=%time:~6,2%
+set CUR_MS=%time:~9,2%
+
+for %%I in (.) do set CURR_DIR_NAME=%%~nxI
+
+set SUBFILENAME=%CURR_DIR_NAME%-%CUR_YYYY%-%CUR_MM%-%CUR_DD%-%CUR_HH%%CUR_NN%
+
+powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('.', '../%SUBFILENAME%.zip'); }"
+```
+
 ### 16. Create your projects folder
 Create your **projects** folder wherever you consider. Clone any github project to login.
 
