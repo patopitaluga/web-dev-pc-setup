@@ -30,6 +30,7 @@ Open control panel. Set **View by** to **Large icons**. Go to the **Sound** opti
 
 ### 4. Initial browser settings.
 If Edge is installed open it first. If no prompt is displayed, close it and open it again. Will ask you to set personalized news. Go to **Settings**, Set **Open Microsoft Edge with**, **New tab page**; **Open new tabs with**, **A blank page**; **Set your home page**: **New tab page**.
+
 If Firefox is installed open it once and it will update itself. Go to **Options** and make sure that Homepage and new tabs are set as **Blank page** in the **Home** tab. Open this document from Firefox.
 
 ### 5. Remove bloat ware
@@ -50,6 +51,7 @@ Open control panel, click **AutoPlay** choose **Take no action** for every case.
 
 ### 9. Install Chocolatey
 Chocolatey is a terminal package manager for Windows.
+
 Open cmd in "administrative mode" from search bar. Paste:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
@@ -124,18 +126,44 @@ To test it create a test.bat file in that folder with "echo 1" as content. Try t
 Create your **projects** folder wherever you consider. Clone any github project to login.
 
 ### 17. Set Cmder initial behavior
-Go to 'settings'.
-In the settings group 'Startup', click on 'Tasks'.
+Go to 'settings'. In the settings group 'Startup', click on 'Tasks'.
+
 Click the console you want to modify (e.g. cmd::Cmder, cmd::Cmder as Admin, bash::bash etc.).
-Click the button that says 'Startup dir...'.
-Select the directory you want the console to start up in by default.
+
+Click the button that says 'Startup dir...'. Select the directory you want the console to start up in by default.
 
 ### 18. Remove useless options from "New" context menu
 Open the Registry Editor
+
 Move to HKEY_CLASSES_ROOT\\.<extension> e.g. HKEY_CLASSES_ROOT\\.obd
+
 Delete or rename the ShellNew key. It may not always be at the root of the key.
+
 Or use this app: https://cresstone.com/apps/shellNewSettings/
 
-### 19. Setup Chrome.
+**Doesn't work in some cases.**
+
+Add "Open with Atom" option for folders.
+
+Regedit: Create a key called "Open with Atom" in HKEY_CLASSES_ROOT\\Directory\\shell\\ create a key called command inside, edit the defaul value as: C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe %V
+
+### 19. Setup Chrome
 Make Chrome always show the url with protocol and www subdomain.
+
 Install plugin https://chrome.google.com/webstore/detail/suspicious-site-reporter/jknemblkbdhdcpllfgbfekkdciegfboi
+
+### 20. Customize Atom
+Settings -> Keybindings. Click **your keymap file** link. Will open **keymap.cson** file. Write at the end (e.g):
+```
+'atom-text-editor':
+  'f6': 'custom:console-log'
+```
+Go to the folder C:\\Users\\Username\\.atom. Edit **init.coffee**. Add:
+```
+atom.commands.add 'atom-text-editor',
+  'custom:console-log': (editor, selection) ->
+    return unless editor = atom.workspace.getActiveTextEditor()
+    selection = editor.getLastSelection()
+    text = selection.getText()
+    atom.workspace.getActiveTextEditor()?.insertText('console.log(' + text + ')')
+```
