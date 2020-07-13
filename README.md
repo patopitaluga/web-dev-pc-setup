@@ -187,3 +187,10 @@ atom.commands.add 'atom-text-editor',
     text = selection.getText()
     atom.workspace.getActiveTextEditor()?.insertText('console.log(' + text + ')')
 ```
+
+#### Useful packages:
+
+- css-declaration-sorter
+- linter-eslint
+- pretty-json
+
