@@ -14,7 +14,7 @@ To set the pc ready for work in the smoothest, most performant, leanest way poss
 
 ## Requirements
 
-A fresh Windows installed (10 Home for this guide). Internet connection.
+A fresh Windows installed (10 Home for this guide / 11 will work but it requires more steps). Internet connection.
 
 ## Setup
 
@@ -187,3 +187,12 @@ atom.commands.add 'atom-text-editor',
     text = selection.getText()
     atom.workspace.getActiveTextEditor()?.insertText('console.log(' + text + ')')
 ```
+---
+
+Install https://atom.io/packages/sort-lines
+
+## 21. Update for Windows 11
+
+The new taskbar is less useful for developmente because doesn't allow differenciate which page / file is open in different browsers / editors. To re-establish the old taskbar there's a program called StartAllBack https://www.startallback.com/
+
+To disable rounded corners for windows: https://github.com/valinet/Win11DisableRoundedCorners/releases/tag/1.0.0.2
