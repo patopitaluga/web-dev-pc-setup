@@ -187,6 +187,7 @@ atom.commands.add 'atom-text-editor',
     text = selection.getText()
     atom.workspace.getActiveTextEditor()?.insertText('console.log(' + text + ')')
 ```
+<<<<<<< HEAD
 ---
 
 Install https://atom.io/packages/sort-lines
@@ -196,3 +197,12 @@ Install https://atom.io/packages/sort-lines
 The new taskbar is less useful for developmente because doesn't allow differenciate which page / file is open in different browsers / editors. To re-establish the old taskbar there's a program called StartAllBack https://www.startallback.com/
 
 To disable rounded corners for windows: https://github.com/valinet/Win11DisableRoundedCorners/releases/tag/1.0.0.2
+=======
+
+#### Useful packages:
+
+- css-declaration-sorter
+- linter-eslint
+- pretty-json
+
+>>>>>>> deb3452d81cb555d813501a076d21d6f5d90b74e
