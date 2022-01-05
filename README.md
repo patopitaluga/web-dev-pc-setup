@@ -152,6 +152,14 @@ Click the console you want to modify (e.g. cmd::Cmder, cmd::Cmder as Admin, bash
 
 Click the button that says 'Startup dir...'. Select the directory you want the console to start up in by default.
 
+If you want to setup two tabs open at startup (probably the best option), Settings > Startup > Tasks. Set the one called cmd::Cmder with:
+
+```
+-new_console:d:C:\Users\pato\projects cmd /k ""%ConEmuDir%\..\init.bat" "
+
+-new_console:d:C:\Users\pato\projects cmd /k ""%ConEmuDir%\..\init.bat" "
+```
+
 ### 18. Remove useless options from "New" context menu
 Open the Registry Editor
 
